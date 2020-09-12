@@ -1,1 +1,1 @@
-# ansible-playbooks
+# ansible-playbooks for automation purpose
