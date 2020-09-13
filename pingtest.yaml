@@ -4,3 +4,10 @@
   tasks:
     - name: Ping Test
       ping:
+
+- hosts: compute
+  remote_user: cloud_user
+  tasks:
+    - name: Check space compute
+      shell: df -h
+

@@ -1,0 +1,15 @@
+---
+- hosts: laall
+  become: true  
+  tasks:
+    - name: Add docker repo to dnf
+      shell: dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: Install Docker
+      shell: dnf install -y docker-ce --nobest
+
+    - name: Enable Docker
+      shell: systemctl enable --now docker
+
+    - name: Provide user access to run Docker
+      shell: usermod -a -G docker cloud_user
